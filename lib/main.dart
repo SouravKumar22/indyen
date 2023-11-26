@@ -6,6 +6,7 @@ import 'package:indyen/profile.dart';
 import 'package:indyen/pushNotifications.dart';
 import 'package:indyen/restaurantDetails.dart';
 import 'package:indyen/splash.dart';
+import 'package:indyen/thankyou.dart';
 
 import 'home.dart';
 
@@ -14,6 +15,6 @@ void main() {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light().copyWith(
       ),
-      home: Profile()));
+      home: Thankyou()));
       // home: Splash()));
 }

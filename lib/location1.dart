@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:indyen/load.dart';
 
 import 'location2.dart';
 
@@ -104,6 +105,10 @@ class _SlocationState extends State<Slocation> {
               margin: EdgeInsets.all(20),
               child: ElevatedButton(
                 onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => Clocation()),
+                  );
+                  _showModalBottomSheet2(context);
                   // Add your button press logic here
                 },
                 style: ElevatedButton.styleFrom(
@@ -160,7 +165,7 @@ void _showModalBottomSheet(BuildContext context) {
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => Slocation()),
+                        MaterialPageRoute(builder: (context) => Loading()),
                       );// Add your button press logic here
                     },
                     style: ElevatedButton.styleFrom(
@@ -171,7 +176,7 @@ void _showModalBottomSheet(BuildContext context) {
                         borderRadius: BorderRadius.circular(14.0), // Set the rounded corners
                       ),
                     ),
-                    child: Text('Continue',style: TextStyle(
+                    child: Text('Confirm Location',style: TextStyle(
                       fontSize: 18,
                     ),),
                   ),
@@ -182,6 +187,10 @@ void _showModalBottomSheet(BuildContext context) {
                   margin: EdgeInsets.all(20),
                   child: ElevatedButton(
                     onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => Clocation()),
+                      );
+                      _showModalBottomSheet2(context);
                       // Add your button press logic here
                     },
                     style: ElevatedButton.styleFrom(
@@ -208,5 +217,204 @@ void _showModalBottomSheet(BuildContext context) {
         ),
       );
     },
+  );
+}
+
+void _showModalBottomSheet2(BuildContext context) {
+  showModalBottomSheet(
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.only(
+        topLeft: Radius.circular(20.0), // Set the top-left radius
+        topRight: Radius.circular(20.0), // Set the top-right radius
+      ),
+    ),
+    context: context,
+    builder: (BuildContext context) {
+      return Container(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(height: 10,),
+              TextFieldWithPrefix(context),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    margin: EdgeInsets.all(20),
+                    height: 50,
+                    width:MediaQuery.of(context).size.width,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => Clocation()),
+                        );// Add your button press logic here
+                        _showModalBottomSheet(context);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        elevation: 0,
+                        primary: Color(0xFFB38E07),
+                        backgroundColor: Color(0xFFB38E07), // Hex code for the background color
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0), // Set the rounded corners
+                        ),
+                      ),
+                      child: Text('Enter complete address',style: TextStyle(
+                        fontSize: 16,
+                      ),),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
+}
+
+Widget TextFieldWithPrefix(BuildContext context) {
+  return Row(
+    children: [
+      Container(
+        padding: const EdgeInsets.all(10.0),
+        width: MediaQuery.of(context).size.width,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text("Madhapur, Hyderabad",
+                style: TextStyle(
+                  color: Color(0xFF111719),
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Text("Bhagya Nagar Colony, Kukatpally, Hyderabad, Telangana",
+                overflow: TextOverflow.ellipsis,
+                maxLines: 3,
+                style: TextStyle(
+                    fontSize: 14,
+                    color: Color(0xFF7C7C7C)
+                ),),
+            ),
+            Divider(
+              thickness: 1,
+              color: Color(0xFFEBEBEB),
+            ),
+            SizedBox(height: 10,),
+            Container(
+              alignment: Alignment.center,
+              margin: EdgeInsets.all(10,),
+              height:48 ,
+              child: TextField(
+                decoration: InputDecoration(
+                  fillColor: Color(0xFFE3E3E3),
+                  hoverColor: Color(0xFFB38E07),
+                  hintText: 'House/Flat Number*',
+                  hintStyle: TextStyle(
+                    fontSize: 14,
+                    color: Color(0xFFABABAB),
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 5,),
+            Container(
+              alignment: Alignment.center,
+              margin: EdgeInsets.all(10,),
+              height:48 ,
+              child: TextField(
+                decoration: InputDecoration(
+                  fillColor: Color(0xFFE3E3E3),
+                  hoverColor: Color(0xFFB38E07),
+                  hintText: 'Landmark (Optional)',
+                  hintStyle: TextStyle(
+                    fontSize: 14,
+                    color: Color(0xFFABABAB),
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Text(
+                'Save as',
+                style: TextStyle(
+                  color: Color(0xFF757575),
+                  fontSize: 14,
+                  fontFamily: 'SF Pro Display',
+                  fontWeight: FontWeight.w400,
+                  height: 0.11,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 15.0,),
+              child: Row(
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                    width: 60,
+                    height: 33,
+                    child: Text(
+                      'Home',
+                      style: TextStyle(
+                        color: Color(0xFFB38E07),
+                        fontSize: 14,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w500,
+                        height: 0,
+                      ),
+                    ),
+                    decoration: ShapeDecoration(
+                      color: Color(0xFFFFFBED),
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(width: 1, color: Color(0xFFB38E07)),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 10,),
+                  Container(
+                    alignment: Alignment.center,
+                    width: 60,
+                    height: 33,
+                    child: Text(
+                      'Other',
+                      style: TextStyle(
+                        color: Color(0xFFABABAB),
+                        fontSize: 14,
+                        fontFamily: 'SF Pro Display',
+                        fontWeight: FontWeight.w400,
+                        height: 0,
+                      ),
+                    ),
+                    decoration: ShapeDecoration(
+                      shape: RoundedRectangleBorder(
+                        side: BorderSide(width: 1, color: Color(0xFFE3E3E3)),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    ],
   );
 }
