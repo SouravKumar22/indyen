@@ -46,7 +46,7 @@ class Thankyou extends StatelessWidget{
          Container(
            height: 165,
            width: MediaQuery.of(context).size.width,
-           margin: EdgeInsets.only(top: 30),
+           margin: EdgeInsets.only(top: 30, bottom: 10),
              child: Image.asset("assets/images/onway.png")),
 
          Container(
