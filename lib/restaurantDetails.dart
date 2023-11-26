@@ -423,8 +423,8 @@ class _RestaurantDetailsState extends State<RestaurantDetails> {
                       itemCount: dish.length, // Adjust the number of items in the grid
                       itemBuilder: (context, index) {
                         return Container(
-                          width: 166,
-                          height: 500,
+                          width: w/2-84,
+                          // height: 350,
                           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
                           decoration: ShapeDecoration(
                             color: Colors.white,
@@ -673,7 +673,6 @@ class _RestaurantDetailsState extends State<RestaurantDetails> {
                                             style: TextStyle(
                                               color: Color(0xBF02060C),
                                               fontSize: 16,
-                                              fontFamily: 'Helvetica',
                                               fontWeight: FontWeight.w700,
                                               height: 0,
                                             ),
@@ -699,7 +698,7 @@ class _RestaurantDetailsState extends State<RestaurantDetails> {
                       ],
                     ),
                   ),
-                  Spacer(),
+                  // Spacer(),
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                     clipBehavior: Clip.antiAlias,

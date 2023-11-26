@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:indyen/cartScreen.dart';
 import 'package:indyen/restaurantDetails.dart';
 import 'package:indyen/splash.dart';
 
@@ -9,6 +10,6 @@ void main() {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light().copyWith(
       ),
-      home: RestaurantDetails()));
+      home: CartScreen()));
       // home: Splash()));
 }
