@@ -1,5 +1,8 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:indyen/cartScreen.dart';
+import 'package:indyen/orderDetails.dart';
 
 class Home extends StatefulWidget{
   @override
@@ -7,6 +10,7 @@ class Home extends StatefulWidget{
 }
 
 class _HomeState extends State<Home> {
+
   @override
   Widget build(BuildContext context) {
     var w = MediaQuery.of(context).size.width;
@@ -1981,20 +1985,38 @@ class _HomeState extends State<Home> {
                 ],),
     ),
       
-      bottomNavigationBar: BottomNavigationBar(
-
-        type: BottomNavigationBarType.fixed,
-        unselectedItemColor: Color(0xFF8E8E93),
-        selectedItemColor: Color(0xFFB38E07),
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.search,),label: "Explore"),
-          BottomNavigationBarItem(icon: Image.asset("assets/images/orders.png",scale: 2,),label: "Orders"),
-          BottomNavigationBarItem(icon: Image.asset("assets/images/notification.png",scale: 2,),label: "Orders"),
-          BottomNavigationBarItem(icon: Image.asset("assets/images/cart.png",scale: 1.1,),label: "Orders"),
-
-        ],
-        
-      ),
+      bottomNavigationBar: bottomBar(context),
     );
   }
+}
+
+BottomNavigationBar bottomBar(BuildContext context){
+  return BottomNavigationBar(
+backgroundColor: Colors.white,
+    type: BottomNavigationBarType.fixed,
+    unselectedItemColor: Color(0xFF8E8E93),
+    selectedItemColor: Color(0xFFB38E07),
+    items: [
+      BottomNavigationBarItem(icon: Icon(Icons.search,size: 33,),label: "Explore"),
+      BottomNavigationBarItem(icon: Image.asset("assets/images/orders.png",scale: 1.5,),label: "Orders"),
+      BottomNavigationBarItem(icon: Image.asset("assets/images/notification.png",scale: 1.5,),label: "Notification"),
+      BottomNavigationBarItem(icon: Image.asset("assets/images/cart.png",scale: 1.5,),label: "Cart"),
+
+    ],
+
+    onTap: (val){
+      if(val==0){
+        Navigator.push(context as BuildContext, MaterialPageRoute(builder: (context)=>Home()));
+      }
+      else if(val==1){
+        Navigator.push(context as BuildContext, MaterialPageRoute(builder: (context)=>OrderDetails()));
+      }
+      else if(val==2){
+        Navigator.push(context as BuildContext, MaterialPageRoute(builder: (context)=>Home()));
+      }
+      else if(val==3){
+        Navigator.push(context as BuildContext, MaterialPageRoute(builder: (context)=>CartScreen()));
+      }
+    },
+  );
 }
