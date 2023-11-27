@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:indyen/cartScreen.dart';
+import 'package:indyen/edit_profile.dart';
 import 'package:indyen/helpSupport.dart';
 import 'package:indyen/orderDetails.dart';
 import 'package:indyen/profile.dart';
@@ -15,6 +16,6 @@ void main() {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light().copyWith(
       ),
-      home: Thankyou()));
+      home: Edit_profile()));
       // home: Splash()));
 }
