@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:indyen/cartScreen.dart';
 import 'package:indyen/orderDetails.dart';
+import 'package:indyen/profile.dart';
 
 class Home extends StatefulWidget{
   @override
@@ -45,17 +46,22 @@ class _HomeState extends State<Home> {
                   Positioned(
                     right: 30,
                     top: 30,
-                    child: Container(
-                      width: 40,
-                      height: 40,
-                      decoration: ShapeDecoration(
-                        image: DecorationImage(
-                          image: AssetImage("assets/images/profile.png"),
-                          fit: BoxFit.fill,
-                        ),
-                        shape: RoundedRectangleBorder(
-                          side: BorderSide(width: 1.50, color: Color(0xFFB38E07)),
-                          borderRadius: BorderRadius.circular(62),
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile()));
+                      },
+                      child: Container(
+                        width: 40,
+                        height: 40,
+                        decoration: ShapeDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/profile.png"),
+                            fit: BoxFit.fill,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(width: 1.50, color: Color(0xFFB38E07)),
+                            borderRadius: BorderRadius.circular(62),
+                          ),
                         ),
                       ),
                     ),

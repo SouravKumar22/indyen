@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:indyen/edit_profile.dart';
 import 'package:indyen/helpSupport.dart';
 import 'package:indyen/home.dart';
 import 'package:indyen/orderDetails.dart';
+import 'package:indyen/order_history.dart';
 import 'package:indyen/pushNotifications.dart';
 import 'package:indyen/splash.dart';
 
@@ -130,51 +132,56 @@ class _ProfileState extends State<Profile> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
-                            width: w-30,
-                            height: 56,
-                            padding: EdgeInsets.symmetric(horizontal: 20),
-                            decoration: ShapeDecoration(
-                              color: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(14),
+                          GestureDetector(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Edit_profile()));
+                            },
+                            child: Container(
+                              width: w-30,
+                              height: 56,
+                              padding: EdgeInsets.symmetric(horizontal: 20),
+                              decoration: ShapeDecoration(
+                                color: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(14),
+                                ),
+                                shadows: [
+                                  BoxShadow(
+                                    color: Color(0x23707070),
+                                    blurRadius: 12,
+                                    offset: Offset(0, 3),
+                                    spreadRadius: 0,
+                                  )
+                                ],
                               ),
-                              shadows: [
-                                BoxShadow(
-                                  color: Color(0x23707070),
-                                  blurRadius: 12,
-                                  offset: Offset(0, 3),
-                                  spreadRadius: 0,
-                                )
-                              ],
-                            ),
-                             child: Row(mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Container(
-                                  width: 24,
-                                  height: 24,
-                                  margin: EdgeInsets.only(right: 20),
-                                  child: Icon(Icons.account_circle_outlined),
-                                ),
-                                Text(
-                                  'Edit Account',
-                                  style: TextStyle(
-                                    color: Color(0xFF161616),
-                                    fontSize: 16,
-                                    fontFamily: 'Gilroy',
-                                    fontWeight: FontWeight.w600,
-                                    height: 0,
+                               child: Row(mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    width: 24,
+                                    height: 24,
+                                    margin: EdgeInsets.only(right: 20),
+                                    child: Icon(Icons.account_circle_outlined),
                                   ),
-                                ),
-                                Spacer(),
-                                Icon(Icons.arrow_forward_ios_rounded,size: 18,),
-                              ],
+                                  Text(
+                                    'Edit Account',
+                                    style: TextStyle(
+                                      color: Color(0xFF161616),
+                                      fontSize: 16,
+                                      fontFamily: 'Gilroy',
+                                      fontWeight: FontWeight.w600,
+                                      height: 0,
+                                    ),
+                                  ),
+                                  Spacer(),
+                                  Icon(Icons.arrow_forward_ios_rounded,size: 18,),
+                                ],
+                              ),
                             ),
                           ),
                           const SizedBox(height: 16),
                           GestureDetector(
                             onTap: (){
-                              // Navigator.push(context, MaterialPageRoute(builder: (context)=>EditAccount()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>OrderHistory()));
                             },
                             child: Container(
                               width: w-30,
