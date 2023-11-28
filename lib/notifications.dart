@@ -36,7 +36,7 @@ class _NotificationsState extends State<Notifications> {
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        margin: EdgeInsets.only(left: 20),
+        margin: EdgeInsets.symmetric(horizontal: 15),
         child: Expanded(
           child: ListView.builder(
             itemCount: dataList.length,
@@ -45,7 +45,6 @@ class _NotificationsState extends State<Notifications> {
               return Column(
                 children: [
                   Container(
-                    height: 50,
                     child: ListTile(
                       minLeadingWidth: 0,
                       leading: index == 0?Container(width:10,child: Center(child: Icon(Icons.circle_sharp, size: 10,color: Color(0xFFB38E07),))):null,
@@ -58,7 +57,7 @@ class _NotificationsState extends State<Notifications> {
                         ),
                       ),
                       subtitle: index == indexWithSubtitle ? Padding(
-                        padding: const EdgeInsets.only(top: 5.0),
+                        padding: const EdgeInsets.only(top: 5.0,bottom: 10),
                         child: Text('View Privacy Policy'),
                       ) : null,
                       onTap: () {
@@ -74,7 +73,7 @@ class _NotificationsState extends State<Notifications> {
           ),
         ),
       ),
-      bottomNavigationBar: bottomBar(context),
+      bottomNavigationBar: bottomBar(context,2),
     );
   }
 }

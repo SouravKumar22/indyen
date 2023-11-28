@@ -425,7 +425,7 @@ class _ProfileState extends State<Profile> {
         ),
       ),
       
-      bottomNavigationBar: bottomBar(context),
+      bottomNavigationBar: bottomBar(context,0),
     );
   }
 }

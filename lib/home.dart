@@ -1993,21 +1993,23 @@ class _HomeState extends State<Home> {
                 ],),
     ),
       
-      bottomNavigationBar: bottomBar(context),
+      bottomNavigationBar: bottomBar(context,0),
     );
   }
 }
 
-BottomNavigationBar bottomBar(BuildContext context){
+BottomNavigationBar bottomBar(BuildContext context,int currentIndex){
   return BottomNavigationBar(
+    currentIndex: currentIndex,
 backgroundColor: Colors.white,
     type: BottomNavigationBarType.fixed,
-    unselectedItemColor: Color(0xFF8E8E93),
     selectedItemColor: Color(0xFFB38E07),
+    unselectedItemColor: Color(0xFF8E8E93),
     items: [
-      BottomNavigationBarItem(icon: Icon(Icons.search,size: 33,),label: "Explore"),
+      BottomNavigationBarItem(
+          icon: Icon(Icons.search,size: 33,),label: "Explore"),
       BottomNavigationBarItem(icon: Image.asset("assets/images/orders.png",scale: 1.5,),label: "Orders"),
-      BottomNavigationBarItem(icon: Image.asset("assets/images/notification.png",scale: 1.5,),label: "Notification"),
+      BottomNavigationBarItem(icon: Image.asset(currentIndex!=2?"assets/images/notification.png":"assets/images/notification2.png",scale: 1.5,),label: "Notification"),
       BottomNavigationBarItem(icon: Image.asset("assets/images/cart.png",scale: 1.5,),label: "Cart"),
 
     ],

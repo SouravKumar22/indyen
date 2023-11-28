@@ -100,7 +100,7 @@ class _PushNotificationsState extends State<PushNotifications> {
         ),
       ),
 
-      bottomNavigationBar: bottomBar(context),
+      bottomNavigationBar: bottomBar(context,2),
     );
   }
 }

@@ -143,7 +143,7 @@ class _HelpSupportState extends State<HelpSupport> {
         ),
       ),
 
-      bottomNavigationBar: bottomBar(context),
+      bottomNavigationBar: bottomBar(context,1),
     );
   }
 }

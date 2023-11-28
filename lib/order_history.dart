@@ -258,7 +258,7 @@ class _OrderHistoryState extends State<OrderHistory> {
           ],
         ),
       ),
-      bottomNavigationBar: bottomBar(context),
+      bottomNavigationBar: bottomBar(context,2),
     );
   }
 }

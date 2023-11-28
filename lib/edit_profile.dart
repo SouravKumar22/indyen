@@ -175,7 +175,7 @@ class _Edit_profileState extends State<Edit_profile> {
           ),
         ),
       ),
-      bottomNavigationBar: bottomBar(context),
+      bottomNavigationBar: bottomBar(context,0),
     );
   }
 }
