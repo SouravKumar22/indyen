@@ -13,11 +13,12 @@ import 'package:indyen/thankyou.dart';
 
 import 'chat_support.dart';
 import 'home.dart';
+import 'notifications.dart';
 
 void main() {
   runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light().copyWith(
       ),
-      home: Home()));
+      home: Notifications()));
 }

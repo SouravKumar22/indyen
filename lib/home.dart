@@ -5,6 +5,8 @@ import 'package:indyen/cartScreen.dart';
 import 'package:indyen/orderDetails.dart';
 import 'package:indyen/profile.dart';
 
+import 'notifications.dart';
+
 class Home extends StatefulWidget{
   @override
   State<Home> createState() => _HomeState();
@@ -2018,7 +2020,7 @@ backgroundColor: Colors.white,
         Navigator.push(context as BuildContext, MaterialPageRoute(builder: (context)=>OrderDetails()));
       }
       else if(val==2){
-        Navigator.push(context as BuildContext, MaterialPageRoute(builder: (context)=>Home()));
+        Navigator.push(context as BuildContext, MaterialPageRoute(builder: (context)=>Notifications()));
       }
       else if(val==3){
         Navigator.push(context as BuildContext, MaterialPageRoute(builder: (context)=>CartScreen()));
