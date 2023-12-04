@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:indyen/cartScreen.dart';
 import 'package:indyen/orderDetails.dart';
 import 'package:indyen/profile.dart';
+import 'package:indyen/restaurantDetails.dart';
 
 import 'notifications.dart';
 
@@ -1216,68 +1217,75 @@ class _HomeState extends State<Home> {
             // Restaurant cards
             Stack(
               children: [
-                Container(
-                  clipBehavior: Clip.hardEdge,
-                  margin: EdgeInsets.all(25),
-                  width: w,
-                  height: 310,
-                  decoration: ShapeDecoration(
-                    color: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => RestaurantDetails()),
+                    );
+                  },
+                  child: Container(
+                    clipBehavior: Clip.hardEdge,
+                    margin: EdgeInsets.all(25),
+                    width: w,
+                    height: 310,
+                    decoration: ShapeDecoration(
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      shadows: [
+                        BoxShadow(
+                          color: Color(0x2B8A8D9B),
+                          blurRadius: 30,
+                          offset: Offset(15, 15),
+                          spreadRadius: 0,
+                        )
+                      ],
                     ),
-                    shadows: [
-                      BoxShadow(
-                        color: Color(0x2B8A8D9B),
-                        blurRadius: 30,
-                        offset: Offset(15, 15),
-                        spreadRadius: 0,
-                      )
-                    ],
-                  ),
-                  child: Stack(
-                    children: [
-                      Image.asset("assets/images/restaurant1.png"),
-                      Positioned(
-                        top: 10,
-                        left: 10,
-                        child: Container(
-                          width: 48,
-                          height: 24,
-                          padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 5),
-                          decoration: ShapeDecoration(
-                            color: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(100),
-                            ),
-                            shadows: [
-                              BoxShadow(
-                                color: Color(0x33FE724C),
-                                blurRadius: 23.39,
-                                offset: Offset(0, 5.85),
-                                spreadRadius: 0,
-                              )
-                            ],
-                          ),
-                          child: Expanded(
-                            child: Row(
-                              children: [
-                                Text(
-                                  '4.5 ',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 12,
-                                    fontFamily: 'Gilroy',
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                                Icon(Icons.star,color: Colors.yellow.shade800,size: 13,)
+                    child: Stack(
+                      children: [
+                        Image.asset("assets/images/restaurant1.png"),
+                        Positioned(
+                          top: 10,
+                          left: 10,
+                          child: Container(
+                            width: 48,
+                            height: 24,
+                            padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 5),
+                            decoration: ShapeDecoration(
+                              color: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(100),
+                              ),
+                              shadows: [
+                                BoxShadow(
+                                  color: Color(0x33FE724C),
+                                  blurRadius: 23.39,
+                                  offset: Offset(0, 5.85),
+                                  spreadRadius: 0,
+                                )
                               ],
+                            ),
+                            child: Expanded(
+                              child: Row(
+                                children: [
+                                  Text(
+                                    '4.5 ',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 12,
+                                      fontFamily: 'Gilroy',
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                  Icon(Icons.star,color: Colors.yellow.shade800,size: 13,)
+                                ],
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
                 Positioned(

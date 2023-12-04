@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:indyen/trackOrder.dart';
 
 class ChatSupport extends StatefulWidget{
 
@@ -32,7 +33,7 @@ class _ChatSupportState extends State<ChatSupport> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios),
           onPressed: (){
-            Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>TrackOrder()));
           },
         ),
         centerTitle: true,

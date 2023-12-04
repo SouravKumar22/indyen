@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:indyen/home.dart';
+import 'package:indyen/profile.dart';
 
 class Edit_profile extends StatefulWidget{
   @override
@@ -15,9 +16,11 @@ class _Edit_profileState extends State<Edit_profile> {
       backgroundColor: Color(0xFFFDFDFD),
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: Icon(
-          Icons.arrow_back_sharp,
-          color: Colors.black,
+        leading: IconButton(
+          onPressed: (){
+            Navigator.of(context).pop();
+          }, icon: Icon(Icons.arrow_back_outlined,
+          color: Colors.black,),
         ),
         title: Text("Edit Account",
         style: TextStyle(
@@ -158,14 +161,19 @@ class _Edit_profileState extends State<Edit_profile> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
-                      'Save',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontFamily: 'Gilroy',
-                        fontWeight: FontWeight.w600,
-                        height: 0,
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile()));
+                      },
+                      child: Text(
+                        'Save',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontFamily: 'Gilroy',
+                          fontWeight: FontWeight.w600,
+                          height: 0,
+                        ),
                       ),
                     ),
                   ],

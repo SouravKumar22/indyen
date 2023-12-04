@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:indyen/restaurantDetails.dart';
 
 class OrderDetails extends StatefulWidget{
   @override
@@ -20,7 +21,7 @@ class _OrderDetailsState extends State<OrderDetails> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: (){
-            Navigator.pop(context);
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>RestaurantDetails()));
           },
         ),
         title: Text("Order Details", style: TextStyle(color:Colors.black,fontSize: 18, fontWeight: FontWeight.w600,)),

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:indyen/payment.dart';
 
 class CartScreen extends StatefulWidget{
   @override
@@ -627,14 +628,19 @@ class _CartScreenState extends State<CartScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text(
-                            'Continue',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontFamily: 'Gilroy',
-                              fontWeight: FontWeight.w600,
-                              height: 0,
+                          GestureDetector(
+                            onTap:(){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Payment()));
+                            },
+                            child: Text(
+                              'Continue',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontFamily: 'Gilroy',
+                                fontWeight: FontWeight.w600,
+                                height: 0,
+                              ),
                             ),
                           ),
                         ],

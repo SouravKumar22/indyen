@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:indyen/chat_support.dart';
+import 'package:indyen/profile.dart';
 
 class HelpChat extends StatefulWidget{
 
@@ -29,7 +30,7 @@ class _HelpChatState extends State<HelpChat> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: (){
-            Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile()));
           },
         ),
         title: Text("Help & Support", style: TextStyle(color:Colors.black,fontSize: 18, fontWeight: FontWeight.w600,)),
@@ -189,7 +190,7 @@ class _HelpChatState extends State<HelpChat> {
             Positioned(bottom: 0,
               child: GestureDetector(
                 onTap: (){
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>ChatSupport()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatSupport()));
                 },
                 child: Container(
                   width: w,
@@ -207,12 +208,17 @@ class _HelpChatState extends State<HelpChat> {
                         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                         margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
                         decoration: ShapeDecoration(color: Color(0xFFB38E07), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14),),),
-                        child: Text(
-                          'Start Chat',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatSupport()));
+                          },
+                          child: Text(
+                            'Start Chat',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                         ),
                       ),
@@ -231,14 +237,19 @@ class _HelpChatState extends State<HelpChat> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text(
-                              'Back',
-                              style: TextStyle(
-                                color:  Color(0xFFB38E07),
-                                fontSize: 18,
-                                fontFamily: 'Gilroy',
-                                fontWeight: FontWeight.w600,
-                                height: 0,
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile()));
+                              },
+                              child: Text(
+                                'Back',
+                                style: TextStyle(
+                                  color:  Color(0xFFB38E07),
+                                  fontSize: 18,
+                                  fontFamily: 'Gilroy',
+                                  fontWeight: FontWeight.w600,
+                                  height: 0,
+                                ),
                               ),
                             ),
                           ],

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:indyen/cartScreen.dart';
 
 class RestaurantDetails extends StatefulWidget{
 
@@ -712,14 +713,20 @@ class _RestaurantDetailsState extends State<RestaurantDetails> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text(
-                          'Checkout',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.white.withOpacity(0.9200000166893005),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            height: 0,
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>CartScreen()));
+
+                          },
+                          child: Text(
+                            'Checkout',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white.withOpacity(0.9200000166893005),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              height: 0,
+                            ),
                           ),
                         ),
                       ],

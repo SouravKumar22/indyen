@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:indyen/trackOrder.dart';
+
+import 'home.dart';
 
 class Thankyou extends StatelessWidget{
   @override
@@ -55,9 +58,9 @@ class Thankyou extends StatelessWidget{
            margin: EdgeInsets.all(20),
            child: ElevatedButton(
              onPressed: () {
-               // Navigator.of(context).push(
-               //   MaterialPageRoute(builder: (context) => Clocation()),
-               // );
+               Navigator.of(context).push(
+                 MaterialPageRoute(builder: (context) => TrackOrder()),
+               );
                // Add your button press logic here
              },
              style: ElevatedButton.styleFrom(
@@ -84,9 +87,9 @@ class Thankyou extends StatelessWidget{
            width:MediaQuery.of(context).size.width,
            child: ElevatedButton(
              onPressed: () {
-               // Navigator.of(context).push(
-               //   MaterialPageRoute(builder: (context) => ()),
-               // );// Add your button press logic here
+               Navigator.of(context).push(
+                 MaterialPageRoute(builder: (context) => Home()),
+               );// Add your button press logic here
              },
              style: ElevatedButton.styleFrom(
                elevation: 0,

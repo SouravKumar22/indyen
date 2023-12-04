@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:indyen/edit_profile.dart';
 import 'package:indyen/helpSupport.dart';
 import 'package:indyen/home.dart';
+import 'package:indyen/login_signup.dart';
 import 'package:indyen/orderDetails.dart';
 import 'package:indyen/order_history.dart';
 import 'package:indyen/pushNotifications.dart';
+import 'package:indyen/restaurantDetails.dart';
 import 'package:indyen/splash.dart';
 
 
@@ -28,7 +30,7 @@ class _ProfileState extends State<Profile> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: (){
-            Navigator.pop(context);
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>RestaurantDetails()));
           },
         ),
         title: Text("Profile", style: TextStyle(color:Colors.black,fontSize: 18, fontWeight: FontWeight.w600,)),
@@ -370,7 +372,7 @@ class _ProfileState extends State<Profile> {
                           GestureDetector(
                             onTap: (){
                               Navigator.popUntil(context, (route) =>false );
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Splash()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
                             },
                             child: Container(
                               width: w-30,

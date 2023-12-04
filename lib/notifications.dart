@@ -23,9 +23,14 @@ class _NotificationsState extends State<Notifications> {
       backgroundColor: Color(0xFFFDFDFD),
       appBar: AppBar(
         backgroundColor: Colors.white,
-        leading: Icon(
-          Icons.arrow_back_sharp,
-          color: Colors.black,
+        leading: GestureDetector(
+          onTap: (){
+            Navigator.pop(context);
+          },
+          child: Icon(
+            Icons.arrow_back_sharp,
+            color: Colors.black,
+          ),
         ),
         title: Text("Notifications",
           style: TextStyle(

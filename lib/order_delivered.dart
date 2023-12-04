@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dash/flutter_dash.dart';
+import 'package:indyen/home.dart';
+import 'package:indyen/thankyou.dart';
 
 
 class OrderDelivered extends StatefulWidget{
@@ -24,7 +26,7 @@ class _OrderDeliveredState extends State<OrderDelivered> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios),
           onPressed: (){
-            Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Thankyou()));
           },
         ),
         centerTitle: true,
@@ -229,14 +231,19 @@ class _OrderDeliveredState extends State<OrderDelivered> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
-                      'Done',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontFamily: 'Gilroy',
-                        fontWeight: FontWeight.w600,
-                        height: 0,
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
+                      },
+                      child: Text(
+                        'Done',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontFamily: 'Gilroy',
+                          fontWeight: FontWeight.w600,
+                          height: 0,
+                        ),
                       ),
                     ),
                   ],

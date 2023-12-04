@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:indyen/home.dart';
+import 'package:indyen/profile.dart';
 
 class OrderHistory extends StatefulWidget{
   @override
@@ -29,7 +30,7 @@ class _OrderHistoryState extends State<OrderHistory> {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: (){
-            Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile()));
           },
         ),
         title: Text("Order History", style: TextStyle(color:Colors.black,fontSize: 18, fontWeight: FontWeight.w600,)),

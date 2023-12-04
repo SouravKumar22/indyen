@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dash/flutter_dash.dart';
+import 'package:indyen/chat_support.dart';
+import 'package:indyen/thankyou.dart';
 
 
 class TrackOrder extends StatelessWidget{
@@ -591,14 +593,19 @@ class TrackOrder extends StatelessWidget{
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
-                        'Chat Support',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontFamily: 'Gilroy',
-                          fontWeight: FontWeight.w600,
-                          height: 0,
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>ChatSupport()));
+                        },
+                        child: Text(
+                          'Chat Support',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontFamily: 'Gilroy',
+                            fontWeight: FontWeight.w600,
+                            height: 0,
+                          ),
                         ),
                       ),
                     ],
@@ -619,14 +626,19 @@ class TrackOrder extends StatelessWidget{
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
-                        'Back',
-                        style: TextStyle(
-                          color:  Color(0xFFB38E07),
-                          fontSize: 18,
-                          fontFamily: 'Gilroy',
-                          fontWeight: FontWeight.w600,
-                          height: 0,
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Thankyou()));
+                        },
+                        child: Text(
+                          'Back',
+                          style: TextStyle(
+                            color:  Color(0xFFB38E07),
+                            fontSize: 18,
+                            fontFamily: 'Gilroy',
+                            fontWeight: FontWeight.w600,
+                            height: 0,
+                          ),
                         ),
                       ),
                     ],

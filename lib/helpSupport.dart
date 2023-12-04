@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:indyen/help_chat.dart';
 import 'package:indyen/home.dart';
+import 'package:indyen/profile.dart';
 
 
 
@@ -74,18 +76,27 @@ class _HelpSupportState extends State<HelpSupport> {
                                   margin: EdgeInsets.only(right: 20),
                                   child: Icon(Icons.account_circle_outlined),
                                 ),
-                                Text(
-                                  'Chat Customer Care',
-                                  style: TextStyle(
-                                    color: Color(0xFF161616),
-                                    fontSize: 16,
-                                    fontFamily: 'Gilroy',
-                                    fontWeight: FontWeight.w600,
-                                    height: 0,
+                                GestureDetector(
+                                  onTap: (){
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>HelpChat()));
+                                  },
+                                  child: Text(
+                                    'Chat Customer Care',
+                                    style: TextStyle(
+                                      color: Color(0xFF161616),
+                                      fontSize: 16,
+                                      fontFamily: 'Gilroy',
+                                      fontWeight: FontWeight.w600,
+                                      height: 0,
+                                    ),
                                   ),
                                 ),
                                 Spacer(),
-                                Icon(Icons.arrow_forward_ios_rounded,size: 18,),
+                                GestureDetector(
+                                  onTap: (){
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>HelpChat()));
+                                  },
+                                    child: Icon(Icons.arrow_forward_ios_rounded,size: 18,)),
                               ],
                             ),
                           ),
@@ -116,18 +127,27 @@ class _HelpSupportState extends State<HelpSupport> {
                                   margin: EdgeInsets.only(right: 20),
                                   child: Image.asset("assets/images/orders2.png"),
                                 ),
-                                Text(
-                                  'Send a mail',
-                                  style: TextStyle(
-                                    color: Color(0xFF161616),
-                                    fontSize: 16,
-                                    fontFamily: 'Gilroy',
-                                    fontWeight: FontWeight.w600,
-                                    height: 0,
+                                GestureDetector(
+                                  onTap: (){
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile()));
+                                  },
+                                  child: Text(
+                                    'Send a mail',
+                                    style: TextStyle(
+                                      color: Color(0xFF161616),
+                                      fontSize: 16,
+                                      fontFamily: 'Gilroy',
+                                      fontWeight: FontWeight.w600,
+                                      height: 0,
+                                    ),
                                   ),
                                 ),
                                 Spacer(),
-                                Icon(Icons.arrow_forward_ios_rounded,size: 18,),
+                                GestureDetector(
+                                    onTap: (){
+                                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile()));
+                                    },
+                                    child: Icon(Icons.arrow_forward_ios_rounded,size: 18,)),
                               ],
                             ),
                           ),

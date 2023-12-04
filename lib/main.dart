@@ -22,5 +22,5 @@ void main() {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light().copyWith(
       ),
-      home: Home()));
+      home: Splash()));
 }

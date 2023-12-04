@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:indyen/home.dart';
 import 'package:indyen/splash.dart';
 class Loading extends StatefulWidget {
   const Loading({super.key});
@@ -18,7 +19,7 @@ class _LoadingState extends State<Loading> {
     Timer(Duration(seconds: 2), () {
       // Replace the current screen with the main screen
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => Splash()),
+        MaterialPageRoute(builder: (context) => Home()),
       );
     });
   }
